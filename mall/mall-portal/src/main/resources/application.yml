@@ -28,6 +28,7 @@ ignored: #安全路径白名单
     - /actuator/**
     - /sso/**
     - /home/**
+    - /news/**
 # 自定义redis key
 redis:
   key:

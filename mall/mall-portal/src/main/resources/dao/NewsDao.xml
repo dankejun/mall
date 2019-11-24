@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.portal.dao.NewsDao">
+
+    <select id="getnewByid" resultMap="com.macro.mall.mapper.NmsNewsMapper.BaseResultMap" >
+        select *
+        from nms_news
+        where ID={#id}
+    </select>
+
+    <select id="getnewBycategory" resultMap="com.macro.mall.mapper.NmsNewsMapper.BaseResultMap">
+        select *
+        from nms_news join nms_news_category on nms_news.categoryID=nms_news_category.CategoryID
+        where categoryID={#categoryID}
+    </select>
+
+</mapper>
