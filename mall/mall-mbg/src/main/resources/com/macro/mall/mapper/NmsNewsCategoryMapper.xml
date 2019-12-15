@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.macro.mall.mapper.NmsNewsCategoryMapper">
   <resultMap id="BaseResultMap" type="com.macro.mall.model.NmsNewsCategory">
-    <id column="CategoryID" jdbcType="INTEGER" property="categoryid" />
-    <result column="CategoryName" jdbcType="VARCHAR" property="categoryname" />
+    <id column="categoryID" jdbcType="INTEGER" property="categoryid" />
+    <result column="categoryName" jdbcType="VARCHAR" property="categoryname" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,7 +64,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    CategoryID, CategoryName
+    categoryID, categoryName
   </sql>
   <select id="selectByExample" parameterType="com.macro.mall.model.NmsNewsCategoryExample" resultMap="BaseResultMap">
     select
@@ -84,11 +84,11 @@
     select 
     <include refid="Base_Column_List" />
     from nms_news_category
-    where CategoryID = #{categoryid,jdbcType=INTEGER}
+    where categoryID = #{categoryid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from nms_news_category
-    where CategoryID = #{categoryid,jdbcType=INTEGER}
+    where categoryID = #{categoryid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.macro.mall.model.NmsNewsCategoryExample">
     delete from nms_news_category
@@ -97,17 +97,17 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.macro.mall.model.NmsNewsCategory">
-    insert into nms_news_category (CategoryID, CategoryName)
+    insert into nms_news_category (categoryID, categoryName)
     values (#{categoryid,jdbcType=INTEGER}, #{categoryname,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.macro.mall.model.NmsNewsCategory">
     insert into nms_news_category
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="categoryid != null">
-        CategoryID,
+        categoryID,
       </if>
       <if test="categoryname != null">
-        CategoryName,
+        categoryName,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -129,10 +129,10 @@
     update nms_news_category
     <set>
       <if test="record.categoryid != null">
-        CategoryID = #{record.categoryid,jdbcType=INTEGER},
+        categoryID = #{record.categoryid,jdbcType=INTEGER},
       </if>
       <if test="record.categoryname != null">
-        CategoryName = #{record.categoryname,jdbcType=VARCHAR},
+        categoryName = #{record.categoryname,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -141,8 +141,8 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update nms_news_category
-    set CategoryID = #{record.categoryid,jdbcType=INTEGER},
-      CategoryName = #{record.categoryname,jdbcType=VARCHAR}
+    set categoryID = #{record.categoryid,jdbcType=INTEGER},
+      categoryName = #{record.categoryname,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -151,14 +151,14 @@
     update nms_news_category
     <set>
       <if test="categoryname != null">
-        CategoryName = #{categoryname,jdbcType=VARCHAR},
+        categoryName = #{categoryname,jdbcType=VARCHAR},
       </if>
     </set>
-    where CategoryID = #{categoryid,jdbcType=INTEGER}
+    where categoryID = #{categoryid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.NmsNewsCategory">
     update nms_news_category
-    set CategoryName = #{categoryname,jdbcType=VARCHAR}
-    where CategoryID = #{categoryid,jdbcType=INTEGER}
+    set categoryName = #{categoryname,jdbcType=VARCHAR}
+    where categoryID = #{categoryid,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -30,12 +30,8 @@ public class NewsController {
     @ResponseBody
     public CommonResult getnewByid(Integer id){
         NmsNews news=newsService.getnewByid(id);
-     /*   if (news==null){
-            return CommonResult.failed();}
-        else*/
         return CommonResult.success(news);
     }
-
 
     @ApiOperation("根据新闻类别返回实体集")
     @RequestMapping(value = "/get/bycategory",method = RequestMethod.GET)

@@ -4,9 +4,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class NmsNewsCategory implements Serializable {
-    @ApiModelProperty(value = "分类ID")
+    @ApiModelProperty(value = "新闻类型ID")
     private Integer categoryid;
 
+    @ApiModelProperty(value = "新闻类型名字")
     private String categoryname;
 
     private static final long serialVersionUID = 1L;
