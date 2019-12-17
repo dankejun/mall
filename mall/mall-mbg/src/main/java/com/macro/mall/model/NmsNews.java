@@ -16,7 +16,7 @@ public class NmsNews implements Serializable {
     @ApiModelProperty(value = "新闻图片url")
     private String image;
 
-    @ApiModelProperty(value = "新闻URL")
+    @ApiModelProperty(value = "新闻url")
     private String url;
 
     private static final long serialVersionUID = 1L;
